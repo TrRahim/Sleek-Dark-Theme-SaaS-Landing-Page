@@ -45,7 +45,11 @@ const AccordionItem = ({
     >
       <div className="flex items-center">
         <span className="flex-1 text-lg font-bold">{question}</span>
-        {isOpen ? <MinusIcon /> : <PlusIcon />}
+        {isOpen ? (
+          <MinusIcon className="cursor-pointer" />
+        ) : (
+          <PlusIcon className="cursor-pointer" />
+        )}
       </div>
 
       {isOpen ? (
