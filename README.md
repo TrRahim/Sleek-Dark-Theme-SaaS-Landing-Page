@@ -74,7 +74,7 @@ You can easily customize the content, colors, and layout of the landing page by 
 
 ## Acknowledgements
 
-**Next.js** - The React framework for production.
-**Tailwind CSS** - A utility-first CSS framework.
-**Framer Motion** - A library for animations.
-**TypeScript** - A typed superset of JavaScript.
+- **Next.js** - The React framework for production.
+- **Tailwind CSS** - A utility-first CSS framework.
+- **Framer Motion** - A library for animations.
+- **TypeScript** - A typed superset of JavaScript.
