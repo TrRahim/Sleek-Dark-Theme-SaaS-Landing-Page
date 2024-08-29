@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200d42_34%,#4721a1_65%,#a46edb_82%)] py-[72px] sm:py-24 relative overflow-clip">
       <div
-        className="absolute h-[375px] w-[750px] sm:h-[768px] sm:w-[1536px] lg:h-[1200px] lg:w-[2400px] rounded-[100%] left-1/2 -translate-x-1/2 border border-[#b48cde] bg-[radial-gradient(closest-side,#000_82%,#9560eb)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]"
+        className="absolute h-[200px] w-[750px] sm:h-[500px] sm:w-[1536px] lg:w-[2900px] rounded-[100%] left-1/2 -translate-x-1/2 border border-[#b48cde] bg-[radial-gradient(closest-side,#000_82%,#9560eb)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]"
         aria-hidden="true"
       />
       <div className="container relative">
