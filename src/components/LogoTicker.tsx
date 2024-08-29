@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Fragment } from "react";
 import acmeLogo from "../assets/images/acme.png";
 import apexLogo from "../assets/images/apex.png";
 import celestialLogo from "../assets/images/celestial.png";
@@ -12,10 +13,12 @@ import quantumLogo from "../assets/images/quantum.png";
 const images = [
   { src: acmeLogo, alt: "Acme Logo" },
   { src: quantumLogo, alt: "Quantum Logo" },
+  { src: apexLogo, alt: "Apex Logo" },
   { src: echoLogo, alt: "Echo Logo" },
   { src: celestialLogo, alt: "Celestial Logo" },
   { src: pulseLogo, alt: "Pulse Logo" },
   { src: apexLogo, alt: "Apex Logo" },
+  { src: echoLogo, alt: "Echo Logo" },
 ];
 
 export const LogoTicker = () => {
@@ -30,27 +33,23 @@ export const LogoTicker = () => {
             initial={{ translateX: 0 }}
             animate={{ translateX: "-50%" }}
             transition={{
-              duration: 10,
+              duration: 16,
               ease: "linear",
               repeat: Infinity,
             }}
             className="flex flex-none gap-16 pr-16 "
           >
-            {images.map((image) => (
-              <Image
-                src={image.src}
-                key={image.alt}
-                alt={image.alt}
-                className="flex-none h-8 w-auto"
-              />
-            ))}
-            {images.map((image) => (
-              <Image
-                src={image.src}
-                key={image.alt}
-                alt={image.alt}
-                className=" h-8 w-auto"
-              />
+            {[...new Array(2)].fill("").map((_, idx) => (
+              <Fragment key={idx}>
+                {images.map((image) => (
+                  <Image
+                    src={image.src}
+                    key={image.alt}
+                    alt={image.alt}
+                    className="flex-none h-8 w-auto"
+                  />
+                ))}
+              </Fragment>
             ))}
           </motion.div>
         </div>
