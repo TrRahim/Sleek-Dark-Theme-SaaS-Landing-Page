@@ -1,10 +1,16 @@
+"use client";
+
 import ArrowIcon from "@/assets/icons/arrow-w.svg";
 import cursorImage from "@/assets/images/cursor.png";
 import messageImage from "@/assets/images/message.png";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 export const Hero = () => {
+  const constraintRef = useRef(null);
+
   return (
     <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200d42_34%,#4721a1_65%,#a46edb_82%)] py-[72px] sm:py-24 relative overflow-clip">
       <div
@@ -28,23 +34,37 @@ export const Hero = () => {
         </div>
         <div className="flex justify-center mt-8">
           <div className="inline-flex relative">
-            <Image
-              src={cursorImage}
-              height={200}
-              width={200}
-              className="absolute right-[476px] top-[108px] hidden sm:inline"
-              alt="cursor image"
-            />
             <h1 className="text-7xl sm:text-9xl font-bold -tracking-tighter text-center">
               One Task <br /> at Time
             </h1>
-            <Image
-              src={messageImage}
-              height={200}
+            <motion.div
+              drag
+              dragSnapToOrigin
+              className="absolute right-[476px] top-[108px] hidden sm:inline"
+            >
+              <Image
+                src={cursorImage}
+                height={200}
+                width={200}
+                alt="cursor image"
+                className=" max-w-none"
+                draggable="false"
+              />
+            </motion.div>
+            <motion.div
+              drag
+              dragSnapToOrigin
               className="absolute left-[498px] top-[56px] hidden sm:inline"
-              width={200}
-              alt="message image"
-            />
+            >
+              <Image
+                src={messageImage}
+                height={200}
+                className="max-w-none"
+                width={200}
+                alt="message image"
+                draggable="false"
+              />
+            </motion.div>
           </div>
         </div>
         <div className="flex justify-center">
