@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import acmeLogo from "../assets/images/acme.png";
 import apexLogo from "../assets/images/apex.png";
@@ -22,8 +25,17 @@ export const LogoTicker = () => {
         <h2 className="text-xl text-center text-white/70">
           Trusted by the world&apos;s most innovative teams.
         </h2>
-        <div className="overflow-hidden mt-9 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="flex gap-16">
+        <div className="flex overflow-clip mt-9 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <motion.div
+            initial={{ translateX: 0 }}
+            animate={{ translateX: "-50%" }}
+            transition={{
+              duration: 10,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+            className="flex flex-none gap-16 pr-16 "
+          >
             {images.map((image) => (
               <Image
                 src={image.src}
@@ -32,7 +44,15 @@ export const LogoTicker = () => {
                 className="flex-none h-8 w-auto"
               />
             ))}
-          </div>
+            {images.map((image) => (
+              <Image
+                src={image.src}
+                key={image.alt}
+                alt={image.alt}
+                className=" h-8 w-auto"
+              />
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 import MinusIcon from "@/assets/icons/minus.svg";
 import PlusIcon from "@/assets/icons/plus.svg";
-import clsx from "clsx";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const items = [
@@ -47,9 +47,17 @@ const AccordionItem = ({
         <span className="flex-1 text-lg font-bold">{question}</span>
         {isOpen ? <MinusIcon /> : <PlusIcon />}
       </div>
-      <div className={clsx("mt4", { hidden: !isOpen, "": isOpen === true })}>
-        {answer}
-      </div>
+
+      {isOpen ? (
+        <motion.div
+          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+          animate={{ opacity: 1, height: "auto", marginTop: "16px" }}
+          exit={{ opacity: 0, height: 0, marginTop: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          {answer}
+        </motion.div>
+      ) : null}
     </div>
   );
 };
