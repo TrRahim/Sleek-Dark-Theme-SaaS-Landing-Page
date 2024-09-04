@@ -47,7 +47,7 @@ Follow the steps below to get the project up and running on your local machine.
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/sleek-dark-theme-landing-page.git
+git clone https://github.com/TrRahim/sleek-dark-theme-landing-page.git
 cd sleek-dark-theme-landing-page
 ```
 ## Install Dependencies
